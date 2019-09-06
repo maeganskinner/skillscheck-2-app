@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from "./components/Header";
 import Form from "./components/Form";
-//import Product from "./components/Product";
-//import Dashboard from "./components/Dashboard";
-//import './App.css';
+import Product from "./components/Product";
+import Dashboard from "./components/Dashboard";
+import './App.css';
 
 class App extends Component {
   constructor(props) {

@@ -1,5 +1,6 @@
 const express = require("express");
 const Massive = require ('massive');
+const axios = require('axios');
 require("dotenv").config();
 
 const app = express();
@@ -10,7 +11,9 @@ massive(process.env.CONNECTION_STRING)
     console.log("Database Connected");
 })
 
-app.get('/api/inventory', productController.getProducts);
+app.get('/api/inventory', productController.getProduct);
+app.post('/api/inventory', productController.addProduct);
+app.delete('./api/inventory', productController.deleteProduct);
 
 
 

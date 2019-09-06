@@ -1,30 +1,25 @@
-function addMovie(req, res) {
-    //rating, genre, title, is_good
-    const {rating, genre, title, is_good} = req.body;
+function addProduct(req, res) {
+    const { name, price, image } = req.body;
     const db = req.app.get("db");
-    db.addMovie(title, genre, is_good, rating).then(response => {
+    db.addProduct(name, price, image).then(response => {
         console.log(response);
         res.sendStatus(200);
     })
 }
 
 function getProduct(req, res) {
-    //if there is a rating query, we will send back all the movies with that rating
     const db = req.app.get("db");
-    if(req.query.rating !== undefined) {
-        db.getMovieByRating(req.query.rating).then(response => {
-            res.status(200).json(response);
-        })
-    } else if(req.query.is_good !== undefined) {
-        db.getMovieByBoolean(req.query.is_good).then(response => {
+    if (req.query.product !== undefined) {
+        db.getProduct.req.query.name).then(response => {
             res.status(200).json(response);
         })
     }
 }
 
 module.exports = {
-    addMovie,
-    getMovie
+    getProduct,
+    addProduct,
+    deleteProduct
 }
 
 

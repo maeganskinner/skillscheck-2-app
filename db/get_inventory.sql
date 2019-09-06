@@ -1,1 +1,8 @@
 SELECT * FROM products
+
+
+
+
+
+
+
